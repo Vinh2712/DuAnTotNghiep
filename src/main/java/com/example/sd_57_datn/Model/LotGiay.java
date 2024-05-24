@@ -1,5 +1,9 @@
 package com.example.sd_57_datn.Model;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +19,10 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 public class LotGiay {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -35,4 +43,9 @@ public class LotGiay {
 
     @Column(name = "trangThai")
     private int trangThai;
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 }
