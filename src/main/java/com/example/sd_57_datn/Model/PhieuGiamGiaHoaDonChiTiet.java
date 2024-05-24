@@ -1,39 +1,48 @@
 package com.example.sd_57_datn.Model;
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name = "LotGiay")
+@Table(name = "PhieuGiamGiaHoaDonChiTiet")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
-public class LotGiay {
+public class PhieuGiamGiaHoaDonChiTiet {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "Id_LotGiay")
+    @Column(name = "Id_PhieuGiamGiaHoaDonChiTiet")
     private UUID id;
 
-    @Column(name = "tenLotGiay")
-    private String tenLotGiay;
+    @ManyToOne
+    @JoinColumn(name = "Id_PhieuGiamGiaHoaDon")
+    private PhieuGiamGiaHoaDon idPhieuGiamGiaHoaDon;
+
+    @ManyToOne
+    @JoinColumn(name = "Id_HoaDon")
+    private HoaDon idHoaDon;
+
+    @Column(name = "tenPhieuGiamGiaHoaDonChiTiet")
+    private String tenkieuBuoc;
+
+    @Column(name = "soTienHoaDonDaGiam")
+    private BigDecimal soTienHoaDonDaGiam;
 
     @Column(name = "ghiChu")
     private String ghiChu;
+
+    @Column(name = "soLuong")
+    private int soLuong;
 
     @Column(name = "ngayTao")
     private Date ngayTao;
@@ -43,9 +52,6 @@ public class LotGiay {
 
     @Column(name = "trangThai")
     private int trangThai;
-<<<<<<< Updated upstream
-=======
 
 
->>>>>>> Stashed changes
 }
