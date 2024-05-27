@@ -11,24 +11,16 @@ import java.util.UUID;
 @Setter
 @Builder
 @Entity
-@Table(name = "ChuongTrinhGiamGiaGiayTheThao")
-public class ChuongTrinhGiamGiaGiayTheThao {
+@Table(name = "Size")
+public class Size {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "Id_ChuongTrinhGiamGiaGiayTheThao")
+    @Column(name = "Id_Size")
     private UUID id;
 
-    @Column(name = "tenChuongTrinhGiamGia")
-    private String tenChuongTrinhGiamGia;
-
-    @Column(name = "phanTramGiam")
-    private int phanTramGiam;
-
-    @Column(name = "ngayBatDau")
-    private String ngayBatDau;
-
-    @Column(name = "ngayKetThuc")
-    private String ngayKetThuc;
+    @Column(name = "size")
+    private String size;
 
     @Column(name = "ghiChu")
     private String ghiChu;
@@ -41,6 +33,4 @@ public class ChuongTrinhGiamGiaGiayTheThao {
 
     @Column(name = "trangThai")
     private String trangThai;
-
-
 }

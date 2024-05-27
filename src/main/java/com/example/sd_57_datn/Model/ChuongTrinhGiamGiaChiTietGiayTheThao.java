@@ -19,8 +19,8 @@ public class ChuongTrinhGiamGiaChiTietGiayTheThao {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "Id_ChuongTrinhGiamGiaChiTietGiayTheThao", referencedColumnName = "Id_ChuongTrinhGiamGiaGiayTheThao")
-    private ChuongTrinhGiamGiaChiTietGiayTheThao chuongTrinhGiamGiaChiTietGiayTheThao;
+    @JoinColumn(name = "Id_ChuongTrinhGiamGiaGiayTheThao", referencedColumnName = "Id_ChuongTrinhGiamGiaGiayTheThao")
+    private ChuongTrinhGiamGiaGiayTheThao chuongTrinhGiamGiaGiayTheThao;
 
     @ManyToOne
     @JoinColumn(name = "Id_GiayTheThao", referencedColumnName = "Id_GiayTheThao")
