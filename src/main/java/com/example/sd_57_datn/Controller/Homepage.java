@@ -6,9 +6,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class Homepage {
+
+//    @GetMapping("/homepage")
+//    public String home(Model model) {
+//
+//        System.out.println("éest");
+//        return "/Admin/index";
+//
+//    }
+    @GetMapping("/homepage")
+    public String home(Model model) {
+
+        System.out.println("éest");
+        return "/khachhang/index";
+
+    }
+
     @GetMapping("/homepage")
     public String home(Model model) {
         return "homepage";
     }
-    //phuong
+
 }
