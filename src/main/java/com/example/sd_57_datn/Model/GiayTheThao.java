@@ -102,7 +102,7 @@ public class GiayTheThao {
     List<Image> image;
 
     public String getAnhDau(){
-        if (image != null && !image.isEmpty){
+        if (image != null && !image.isEmpty()){
             return  image.get(0).getLink();
         }
         return "Đường dẫn ảnh mặc định khi không có ảnh"; //thay ảnh bằng thông báo khi không có ảnh

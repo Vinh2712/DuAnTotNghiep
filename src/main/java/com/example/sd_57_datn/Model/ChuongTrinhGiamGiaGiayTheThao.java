@@ -18,6 +18,9 @@ public class ChuongTrinhGiamGiaGiayTheThao {
     @Column(name = "Id_ChuongTrinhGiamGiaGiayTheThao")
     private UUID id;
 
+    @Column(name = "tenChuongTrinhGiamGia")
+    private String tenChuongTrinhGiamGia;
+
     @Column(name = "phanTramGiam")
     private int phanTramGiam;
 
@@ -25,10 +28,7 @@ public class ChuongTrinhGiamGiaGiayTheThao {
     private String ngayBatDau;
 
     @Column(name = "ngayKetThuc")
-    private String gioiTinh;
-
-    @Column(name = "ngayKetThuc")
-    private String gioiTinh;
+    private String ngayKetThuc;
 
     @Column(name = "ghiChu")
     private String ghiChu;
@@ -41,4 +41,6 @@ public class ChuongTrinhGiamGiaGiayTheThao {
 
     @Column(name = "trangThai")
     private String trangThai;
+
+
 }

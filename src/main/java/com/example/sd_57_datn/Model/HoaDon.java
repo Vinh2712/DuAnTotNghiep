@@ -18,7 +18,7 @@ import java.util.UUID;
 public class HoaDon {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "Id_KhachHang")
+    @Column(name = "Id_HoaDon")
     private UUID id;
 
     @ManyToOne
@@ -26,8 +26,8 @@ public class HoaDon {
     private KhachHang khachHang;
 
     @ManyToOne
-    @JoinColumn(name = "Id_User")
-    private User user;
+    @JoinColumn(name = "Id_Users")
+    private Users users;
 
     @Column(name = "maHoaDon")
     private String maHoaDon;
