@@ -32,5 +32,6 @@ public class Size {
     private String ngaySua;
 
     @Column(name = "trangThai")
-    private String trangThai;
+    private int trangThai;
+
 }

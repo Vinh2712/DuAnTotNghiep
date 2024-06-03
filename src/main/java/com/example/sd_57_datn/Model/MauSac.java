@@ -30,10 +30,10 @@ public class MauSac {
     private String ghiChu;
 
     @Column(name = "ngayTao")
-    private Date ngayTao;
+    private String ngayTao;
 
     @Column(name = "ngaySua")
-    private Date ngaySua;
+    private String ngaySua;
 
     @Column(name = "trangThai")
     private int trangThai;

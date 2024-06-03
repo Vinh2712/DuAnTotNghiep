@@ -24,16 +24,16 @@ public class KieuBuoc {
     private UUID id;
 
     @Column(name = "tenKieuBuoc")
-    private String tenkieuBuoc;
+    private String tenKieuBuoc;
 
     @Column(name = "ghiChu")
     private String ghiChu;
 
     @Column(name = "ngayTao")
-    private Date ngayTao;
+    private String ngayTao;
 
     @Column(name = "ngaySua")
-    private Date ngaySua;
+    private String ngaySua;
 
     @Column(name = "trangThai")
     private int trangThai;

@@ -14,13 +14,13 @@ public class Homepage {
 //        return "/Admin/index";
 //
 //    }
-    @GetMapping("/homepage")
-    public String home(Model model) {
+  //  @GetMapping("/homepage")
+ //   public String home(Model model) {
 
-        System.out.println("éest");
-        return "/khachhang/index";
+ //       System.out.println("éest");
+  //      return "/khachhang/index";
 
-    }
+ //   }
 
     @GetMapping("/homepage")
     public String home(Model model) {
