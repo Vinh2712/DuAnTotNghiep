@@ -60,7 +60,7 @@ public class GiayTheThao {
 
     @ManyToOne
     @JoinColumn(name = "Id_ThuongHieu")
-    private ThuongHieu thuonghieu;
+    private ThuongHieu thuongHieu;
 
     @ManyToOne
     @JoinColumn(name = "Id_DinhTanGiay")
