@@ -10,21 +10,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Create dữ liệu giầy thể thao</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <%--    <link href="/css/GiayTheThao/All_GiayTheThao/create.css" rel="stylesheet">--%>
-
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+            min-width: 300px; /* Đảm bảo cột không quá nhỏ */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            width: fit-content;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+            .btn {
+                margin: 0 auto;
+            }
+        }
     </style>
+
 </head>
 <body>
 
-
 <div class="container">
-
     <a href="/GiayTheThao/listGiayTheThao" style="text-decoration: none">
         <button style="margin-bottom: 10px;" type="submit" class="btn btn-primary">Back</button>
     </a>
 
-    <h3 style="text-align: center; color: black; margin-top: 0px; margin-bottom: 30px">Thêm dữ liệu bảng giầy thể thao</h3>
+    <h3 style="text-align: center; color: black; margin-top: 0px; margin-bottom: 30px">Thêm dữ liệu bảng giày thể thao</h3>
 
     <frm:form
             modelAttribute="giayTheThao"
@@ -34,149 +75,147 @@
     >
 
         <div class="form-row">
-            <div class="form-group col-md-4">
-                <label >Form</label>
-                <span style="color: red">*</span>
-                <select class="form-control" name="form.id">
-                    <c:forEach items="${form}" var="form">
-                        <c:if test="${form.trangThai eq 1}">
-                            <option value="${form.id}">${form.tenForm}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
+            <div class="column">
+                <div class="form-group">
+                    <label>Form</label>
+                    <span style="color: red">*</span>
+                    <select class="form-control" name="form.id">
+                        <c:forEach items="${form}" var="form">
+                            <c:if test="${form.trangThai eq 1}">
+                                <option value="${form.id}">${form.tenForm}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Công dụng</label>
+                    <span style="color: red">*</span>
+                    <select class="form-control" name="congDung.id">
+                        <c:forEach items="${congDung}" var="congDung">
+                            <c:if test="${congDung.trangThai eq 1}">
+                                <option value="${congDung.id}">${congDung.tenCongDung}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Chất liệu</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="chatLieu.id">
+                        <c:forEach items="${chatLieu}" var="chatLieu">
+                            <c:if test="${chatLieu.trangThai eq 1}">
+                                <option value="${chatLieu.id}">${chatLieu.tenChatLieu}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Hướng dẫn bảo quản</label>
+                    <span style="color: red">*</span>
+                    <select class="form-control" name="huongDanBaoQuan.id">
+                        <c:forEach items="${huongDanBaoQuan}" var="huongDanBaoQuan">
+                            <c:if test="${huongDanBaoQuan.trangThai eq 1}">
+                                <option value="${huongDanBaoQuan.id}">${huongDanBaoQuan.tenHuongDanBaoQuan}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Lót giày</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="lotGiay.id">
+                        <c:forEach items="${lotGiay}" var="lotGiay">
+                            <c:if test="${lotGiay.trangThai eq 1}">
+                                <option value="${lotGiay.id}">${lotGiay.tenLotGiay}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cổ giày</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="coGiay.id">
+                        <c:forEach items="${coGiay}" var="coGiay">
+                            <c:if test="${coGiay.trangThai eq 1}">
+                                <option value="${coGiay.id}">${coGiay.tenCoGiay}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
             </div>
-            <div class="form-group col-md-4">
-                <label>Công dụng</label>
-                <span style="color: red">*</span>
-                <select class="form-control" name="congDung.id">
-                    <c:forEach items="${congDung}" var="congDung">
-                        <c:if test="${congDung.trangThai eq 1}">
-                            <option value="${congDung.id}">${congDung.tenCongDung}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label>Chất liệu</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="chatLieu.id">
-                    <c:forEach items="${chatLieu}" var="chatLieu">
-                        <c:if test="${chatLieu.trangThai eq 1}">
-                            <option value="${chatLieu.id}">${chatLieu.tenChatLieu}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label >Hướng dẫn bảo quản </label>
-                <span style="color: red">*</span>
-                <select class="form-control" name="huongDanBaoQuan.id">
-                    <c:forEach items="${huongDanBaoQuan}" var="huongDanBaoQuan">
-                        <c:if test="${huongDanBaoQuan.trangThai eq 1}">
-                            <option value="${huongDanBaoQuan.id}">${huongDanBaoQuan.tenHuongDanBaoQuan}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label >Lót giầy</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="lotGiay.id">
-                    <c:forEach items="${lotGiay}" var="lotGiay">
-                        <c:if test="${lotGiay.trangThai eq 1}">
-                            <option value="${lotGiay.id}">${lotGiay.tenLotGiay}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label>Cổ giầy</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="coGiay.id">
-                    <c:forEach items="${coGiay}" var="coGiay">
-                        <c:if test="${coGiay.trangThai eq 1}">
-                            <option value="${coGiay.id}">${coGiay.tenCoGiay}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label >Đế giầy</label>
-                <span style="color: red">*</span>
-                <select class="form-control" name="deGiay.id">
-                    <c:forEach items="${deGiay}" var="deGiay">
-                        <c:if test="${deGiay.trangThai eq 1}">
-                            <option value="${deGiay.id}">${deGiay.tenDeGiay}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label >Dây giày</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="dayGiay.id">
-                    <c:forEach items="${dayGiay}" var="dayGiay">
-                        <c:if test="${dayGiay.trangThai eq 1}">
-                            <option value="${dayGiay.id}">${dayGiay.tenDayGiay}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label >Trọng lượng</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="trongLuong.id">
-                    <c:forEach items="${trongLuong}" var="trongLuong">
-                        <c:if test="${trongLuong.trangThai eq 1}">
-                            <option value="${trongLuong.id}">${trongLuong.tenTrongLuong}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label>Thương hiệu</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="thuongHieu.id">
-                    <c:forEach items="${thuongHieu}" var="thuongHieu">
-                        <c:if test="${thuongHieu.trangThai eq 1}">
-                            <option value="${thuongHieu.id}">${thuongHieu.tenThuongHieu}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label>Kiểu buộc</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="kieuBuoc.id">
-                    <c:forEach items="${kieuBuoc}" var="kieuBuoc">
-                        <c:if test="${kieuBuoc.trangThai eq 1}">
-                            <option value="${kieuBuoc.id}">${kieuBuoc.tenKieuBuoc}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label>Đinh tán giầy</label>
-                <span style="color: red">*</span>
-                <select  class="form-control" name="dinhTanGiay.id">
-                    <c:forEach items="${dinhTanGiay}" var="dinhTanGiay">
-                        <c:if test="${dinhTanGiay.trangThai eq 1}">
-                            <option value="${dinhTanGiay.id}">${dinhTanGiay.tenDinhTanGiay}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
+            <div class="column">
+                <div class="form-group">
+                    <label>Đế giày</label>
+                    <span style="color: red">*</span>
+                    <select class="form-control" name="deGiay.id">
+                        <c:forEach items="${deGiay}" var="deGiay">
+                            <c:if test="${deGiay.trangThai eq 1}">
+                                <option value="${deGiay.id}">${deGiay.tenDeGiay}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Dây giày</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="dayGiay.id">
+                        <c:forEach items="${dayGiay}" var="dayGiay">
+                            <c:if test="${dayGiay.trangThai eq 1}">
+                                <option value="${dayGiay.id}">${dayGiay.tenDayGiay}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Trọng lượng</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="trongLuong.id">
+                        <c:forEach items="${trongLuong}" var="trongLuong">
+                            <c:if test="${trongLuong.trangThai eq 1}">
+                                <option value="${trongLuong.id}">${trongLuong.tenTrongLuong}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Thương hiệu</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="thuongHieu.id">
+                        <c:forEach items="${thuongHieu}" var="thuongHieu">
+                            <c:if test="${thuongHieu.trangThai eq 1}">
+                                <option value="${thuongHieu.id}">${thuongHieu.tenThuongHieu}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Kiểu buộc</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="kieuBuoc.id">
+                        <c:forEach items="${kieuBuoc}" var="kieuBuoc">
+                            <c:if test="${kieuBuoc.trangThai eq 1}">
+                                <option value="${kieuBuoc.id}">${kieuBuoc.tenKieuBuoc}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Đinh tán giày</label>
+                    <span style="color: red">*</span>
+                    <select  class="form-control" name="dinhTanGiay.id">
+                        <c:forEach items="${dinhTanGiay}" var="dinhTanGiay">
+                            <c:if test="${dinhTanGiay.trangThai eq 1}">
+                                <option value="${dinhTanGiay.id}">${dinhTanGiay.tenDinhTanGiay}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </div>
             </div>
         </div>
 
         <div class="form-row">
-            <div class="form-group col-md-4">
-                <label>Tên giầy thể thao</label>
+            <div class="form-group col-md-6">
+                <label>Tên giày thể thao</label>
                 <span style="color: red">*</span>
                 <frm:input id="tenGiayTheThao" required="" type="text" class="form-control" path="tenGiayTheThao" cssStyle="" placeholder="Input text" value=""/>
                 <frm:errors path="tenGiayTheThao"></frm:errors>
@@ -186,10 +225,10 @@
                     <label style="color: red">${erCheckTenGiayTheThaoTrung}</label>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label>Giá bán VNĐ</label>
                 <span style="color: red">*</span>
-                <frm:input id="giaBan"  required="" type="text" class="form-control" path="giaBan" cssStyle="" onblur="formatGiaBan()" placeholder="Input VNĐ" value=""/>
+                <frm:input id="giaBan" required="" type="text" class="form-control" path="giaBan" cssStyle="" onblur="formatGiaBan()" placeholder="Input VNĐ" value=""/>
                 <frm:errors path="giaBan"></frm:errors>
                 <div class="er">
                     <label style="color: red">${erCheckGiaBanNumber}</label>
@@ -207,11 +246,10 @@
             </div>
         </div>
 
-        <button  style="margin-bottom: 30px; margin-left: 470px; margin-top: 30px" type="submit" class="btn btn-primary">Create</button>
+        <button style="margin-bottom: 30px; margin-left: 470px; margin-top: 30px" type="submit" class="btn btn-primary">Create</button>
     </frm:form>
 
 </div>
-
 
 
 <%--Định dạng tiền--%>
