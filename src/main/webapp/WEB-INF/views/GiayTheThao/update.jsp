@@ -11,7 +11,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Update dữ liệu giầy thể thao</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<%--    <link href="/css/GiayTheThao/All_GiayTheThao/update.css" rel="stylesheet">--%>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+            min-width: 300px; /* Đảm bảo cột không quá nhỏ */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            width: fit-content;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+            .btn {
+                margin: 0 auto;
+            }
+        }
+    </style>
+
 
     <script>
 
@@ -35,8 +81,6 @@
     </script>
 </head>
 <body>
-
-
 <section class="scrollable-list" style="width: 100%; max-height: 700px; overflow-y: auto; overflow-x: hidden">
     <div class="container">
         <div class="row">
@@ -45,15 +89,7 @@
                     <button style="margin-bottom: 30px;" type="submit" class="btn btn-primary">Back</button>
                 </a>
             </div>
-            <%--            <div class="col-lg-12">--%>
-            <%--                <marquee>--%>
-            <%--                    <h5 style="font-size: 50px; font-weight: bold; font-family: Brush Script MT ; color: #b1dfbb;">--%>
-            <%--                        Hãy tiếp tục cập nhật thêm thông tin của giầy thể thao ! để giầy thể thao được kích hoạt.--%>
-            <%--                    </h5>--%>
-            <%--                </marquee>--%>
-            <%--            </div>--%>
         </div>
-
 
         <h3 style="text-align: center; color: black; margin-bottom: 50px; margin-top: 5px">Update dữ liệu giầy thể thao</h3>
         <h4 style="color: red; font-weight: bold;font-size: 20px; margin-bottom: 30px">${messDoneUpdate}</h4>
@@ -198,16 +234,6 @@
                         <label style="color: red">${erCheckGiaBanSoConertString}</label>
                         <label style="color: red">${erCheckGiaBanIsEmtry}</label>
                     </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label style="margin-left: 30px">Giới tính :</label>
-                    <div class="gioiTinh" style="margin-top: 7px; margin-left: 50px">
-                        <input class="form-check-input" type="radio" name="gioiTinh" id="inlineRadio1" value="Nam" ${giayTheThao.gioiTinh == "Nam" ? "checked" : ""} >
-                        <label style="color: black; margin-right: 40px" class="form-check-label" for="inlineRadio1">Nam</label>
-                        <input class="form-check-input" type="radio" name="gioiTinh" id="inlineRadio2" value="Nữ" ${giayTheThao.gioiTinh == "Nữ" ? "checked" : ""}>
-                        <label style="color: black" class="form-check-label" for="inlineRadio2">Nữ</label>
-                    </div>
-
                 </div>
             </div>
 

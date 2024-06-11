@@ -260,7 +260,7 @@ public class GiayTheThaoController {
 
         return pageNumbers;
     }
-    //Todo code bảng giầy thể thao
+    //tạo giày thể thao
     @GetMapping("GiayTheThao/create")
     public String createShow(Model model){
 
@@ -285,8 +285,6 @@ public class GiayTheThaoController {
             return "/GiayTheThao/create";
 
         }
-
-        //Todo code check
 
         //Check tên sản phẩm trống
         if(giayTheThao.getTenGiayTheThao() == null
@@ -361,14 +359,14 @@ public class GiayTheThaoController {
         return "redirect:/GiayTheThao/index?tab=inactive";
 
     }
-    //Todo caode create bảng giầy thể thao
+    //Tên sản phẩm đã tồn tại trong list
     private boolean tenGiayTheThaoCheckTrung(String tenGiayTheThao){
 
         for(GiayTheThao giayTheThao: giayTheThaoRepository.findAll()){
 
             if(giayTheThao.getTenGiayTheThao().equalsIgnoreCase(tenGiayTheThao)){
 
-                return true;//Tên sản phẩm đã tồn tại trong list
+                return true;
 
             }
 
@@ -377,14 +375,14 @@ public class GiayTheThaoController {
         return false;
     }
 
-    //Todo code giầy thể thao chi tiết
+    //update giày thể thao
     @PostMapping(value = "GiayTheThao/update/{id}")
     public String showSaveUpdateGiayTheThao(Model model,
                                             @ModelAttribute("giayTheThao") GiayTheThao giayTheThao,
                                             RedirectAttributes attributes){
 
         model.addAttribute("viewMessage","Update dữ liệu giầy thể thao thành công !");
-        //Check validate cho update
+
         //Check tên sản phẩm trống
         if(giayTheThao.getTenGiayTheThao() == null
                 ||  giayTheThao.getTenGiayTheThao().trim().length() ==0
@@ -394,6 +392,7 @@ public class GiayTheThaoController {
             return "/GiayTheThao/update";
 
         }
+
         //Check tên sản phẩm nhập kí tự số đầu tiên
         if (giayTheThao.getTenGiayTheThao().matches("^\\d.*") ||
                 !giayTheThao.getTenGiayTheThao().matches(".*[a-zA-Z].*")) {
@@ -461,7 +460,7 @@ public class GiayTheThaoController {
     }
 
 
-    //Todo code code update sản phẩm lên chi tiết sản phẩm
+    //update lên gtt chi tiết
     @RequestMapping("GiayTheThao/update/{id}")//id của giầy thể thao
     public String showUpdateGiayTheThaoChiTiet(Model model,
                                                @PathVariable("id") UUID id){
@@ -475,8 +474,7 @@ public class GiayTheThaoController {
 
     }
 
-    //Todo code update lại giầy thể thao và giầy thể thao chi tiết
-
+    //hiển thị lại update
     @RequestMapping(value = "GiayTheThao/update/{id}",params = "giayTheThaoChiTietId"
     )
     public String showSaveGiayTheThaoChiTietAndUpdateGiayTheThao(
@@ -494,7 +492,7 @@ public class GiayTheThaoController {
     }
 
 
-    //Todo code create size, số lượng , màu sắc giầy thể thao chi tiết
+    //create size, số lượng , màu sắc giầy thể thao chi tiết
 
     @PostMapping(value = "GiayTheThao/createGiayTheThaoChiTiet")
     public String createGiayTheThaoChiTiet(Model model,
@@ -546,7 +544,7 @@ public class GiayTheThaoController {
 
         } else {
             // Nếu không có giày thể thao chi tiết id, tạo bản ghi mới
-            //Check validate cho các trường
+            //validate
             if(giayTheThaoChiTiet.getSoLuong() == null
                     || giayTheThaoChiTiet.getSoLuong().trim().length()==0
                     || giayTheThaoChiTiet.getSoLuong().isEmpty()){
@@ -626,7 +624,7 @@ public class GiayTheThaoController {
     }
 
 
-    //Todo code tìm kiếm thông tin giầy thể thao theo ten
+    //code tìm kiếm thông tin giầy thể thao theo ten
 
     @GetMapping("GiayTheThao/search")
     public String showListSearch(
@@ -663,7 +661,7 @@ public class GiayTheThaoController {
 
 
 
-    //Todo code save image của giây thể thao
+    //save image của giây thể thao
 
     @PostMapping(value = "GiayTheThao/createImage")
     public String createanh(Model model,
@@ -673,16 +671,14 @@ public class GiayTheThaoController {
                             @RequestPart("url") MultipartFile file,
                             RedirectAttributes attributes) throws IOException, ServletException {
 
-        //Todo code check ảnh
-
-        //Todo code check ảnh trống
+        //check ảnh trống
         if (file.isEmpty()) {
 
             attributes.addFlashAttribute("erCheckImageIsEmtry", "Vui lòng chọn một tệp ảnh để được kích hoạt sản phẩm!");
             return "redirect:/GiayTheThao/update/" + id;
 
         }
-        //Todo code check ảnh trùng
+        //check ảnh trùng
         GiayTheThao giayTheThao = giayTheThaoRepository.findById(id).orElse(null);
 
         //Kiểm tra xem có ảnh khác có cùng trường url_image không
@@ -724,8 +720,7 @@ public class GiayTheThaoController {
 
     }
 
-    //Todo code xóa image
-
+    //xóa image
     @GetMapping("/GiayTheThao/Image/delete/{imageId}")
     public String deleteImage(Model model,
                               @PathVariable("imageId") UUID imageId,
@@ -765,7 +760,7 @@ public class GiayTheThaoController {
     }
 
 
-    //Todo code thông tin giầy thể thao
+    //thông tin giầy thể thao
     @GetMapping("GiayTheThao/detailGiayTheThaoViewIndex/{id}")
     public String detailGiayTheThaoViewIndexViewIndex(Model model,
                                                       @PathVariable UUID id){
