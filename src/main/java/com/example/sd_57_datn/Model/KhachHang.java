@@ -1,6 +1,8 @@
 package com.example.sd_57_datn.Model;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Date;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -38,9 +40,7 @@ public class KhachHang {
     private String gioiTinh;
 
     @Column(name = "ngaySinh")
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private String SoTienDaGiam;
+    private Date ngaySinh;
 
     @Column(name = "soDienThoai")
     private String soDienThoai;
@@ -61,10 +61,10 @@ public class KhachHang {
     private String ghiChu;
 
     @Column(name = "ngayTao")
-    private String ngayTao;
+    private LocalDateTime ngayTao;
 
     @Column(name = "ngaySua")
-    private String ngaySua;
+    private LocalDateTime ngaySua;
 
     @Column(name = "trangThai")
     private int trangThai;

@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.UUID;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GiayTheThaoService implements GiayTheThaoImpl {
     @Autowired
     private GiayTheThaoRepository repo;
@@ -18,6 +20,9 @@ public class GiayTheThaoService implements GiayTheThaoImpl {
             return repo.findAll();
         }
 
+    }
+    public GiayTheThao save(GiayTheThao giayTheThao) {
+        return repo.save(giayTheThao);
     }
 
     @Override
