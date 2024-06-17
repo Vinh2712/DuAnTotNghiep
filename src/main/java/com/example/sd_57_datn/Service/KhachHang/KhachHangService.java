@@ -50,4 +50,10 @@ public class KhachHangService implements KhachHangImpl{
 //  KhachHang getById(UUID id);
 //  KhachHang save(KhachHang khachHang);
 //  void delete(UUID id);
+
+
+  //Todo code dành cho bán hàng tại quậy
+  public List<KhachHang> getAll() {
+    return khachHangRepository.findAll();
+  }
 }

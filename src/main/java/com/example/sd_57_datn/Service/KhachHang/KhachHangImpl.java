@@ -14,4 +14,5 @@ public interface KhachHangImpl {
   KhachHang getById(UUID id);
   KhachHang save(KhachHang khachHang);
   void delete(UUID id);
+
 }
