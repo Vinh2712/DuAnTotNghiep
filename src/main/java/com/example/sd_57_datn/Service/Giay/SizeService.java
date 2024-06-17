@@ -22,6 +22,10 @@ public class SizeService {
     private SizeRepository repo;
 
 
+    public Size save(Size size) {
+        return repo.save(size);
+    }
+
 
     public void add(Size deGiay) {
         this.repo.save(deGiay);

@@ -58,4 +58,5 @@ public interface HoaDonRepository extends JpaRepository<HoaDon, UUID> {
   //Tìm kiếm theo mã
   @Query("select hd from HoaDon hd where hd.maHoaDon = ?1")
   HoaDon findByMa(String ma);
+  Page<HoaDon> listHoaDonFindByTrangThai(int trangThai, Pageable pageable);
 }

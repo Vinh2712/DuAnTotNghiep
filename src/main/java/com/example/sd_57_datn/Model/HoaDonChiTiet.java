@@ -22,8 +22,8 @@ public class HoaDonChiTiet {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "Id_KhachHang")
-    private KhachHang khachHang;
+    @JoinColumn(name = "Id_HoaDon")
+    private HoaDon hoaDon;
 
     @ManyToOne
     @JoinColumn(name = "Id_GiayTheThaoChiTiet")
@@ -46,4 +46,6 @@ public class HoaDonChiTiet {
 
     @Column(name = "trangThai")
     private int trangThai;
+
+
 }

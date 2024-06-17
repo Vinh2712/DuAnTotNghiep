@@ -14,7 +14,9 @@ public class MauSacService {
     @Autowired
     private MauSacRepository mauSacRepository;
 
-
+    public MauSac save(MauSac mauSac) {
+        return mauSacRepository.save(mauSac);
+    }
 
     public List<MauSac> findMauSac(String tenMauSac) {
         if (tenMauSac != null) {

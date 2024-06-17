@@ -1,6 +1,7 @@
 package com.example.sd_57_datn.Model;
 
 import jakarta.persistence.*;
+import java.util.List;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -25,7 +26,7 @@ public class HoaDon {
     private KhachHang khachHang;
 
     @ManyToOne
-    @JoinColumn(name = "Id_Users")
+    @JoinColumn(name = "Id_User")
     private Users users;
 
     @Column(name = "maHoaDon")
@@ -63,5 +64,8 @@ public class HoaDon {
 
     @Column(name = "trangThai")
     private int trangThai;
+
+    @OneToMany(mappedBy = "hoaDon", cascade = CascadeType.ALL)
+    private List<HoaDonChiTiet> hoaDonChiTiets;
 
 }

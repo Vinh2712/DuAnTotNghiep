@@ -1,3 +1,4 @@
+
 package com.example.sd_57_datn.Service.HoaDon;
 
 import com.example.sd_57_datn.Model.GiayTheThaoChiTiet;
@@ -15,6 +16,7 @@ import java.util.UUID;
 
 @Service
 public class HoaDonChiTietService {
+
 
     @Autowired
     private HoaDonChiTietRepository repo;
@@ -98,5 +100,24 @@ public class HoaDonChiTietService {
     }
 
 
+
+  @Autowired
+  private HoaDonChiTietRepository hoaDonChiTietRepository;
+
+  public HoaDonChiTiet save(HoaDonChiTiet hoaDonChiTiet) {
+    return hoaDonChiTietRepository.save(hoaDonChiTiet);
+  }
+
+  public HoaDonChiTiet findById(UUID id) {
+    return hoaDonChiTietRepository.findById(id).orElse(null);
+  }
+
+  public List<HoaDonChiTiet> findAll() {
+    return hoaDonChiTietRepository.findAll();
+  }
+
+  public List<HoaDonChiTiet> findByHoaDonId(UUID hoaDonId) {
+    return hoaDonChiTietRepository.findByHoaDon_Id(hoaDonId);
+  }
 
 }

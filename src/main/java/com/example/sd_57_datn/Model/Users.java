@@ -16,60 +16,58 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Users {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "Id_User")
-    private UUID id;
 
-    @Column(name = "maUser")
-    private String maUser;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  @Column(name = "Id_User")
+  private UUID id;
 
-    @Column(name = "Url_Image")
-    private String Url_Image;
+  @Column(name = "maUser")
+  private String maUser;
 
-    @Column(name = "email")
-    private String email;
+  @Column(name = "Url_Image")
+  private String Url_Image;
 
-    @Column(name = "matKhau")
-    private String matKhau;
+  @Column(name = "email")
+  private String email;
 
-    @Column(name = "tenUser")
-    private String tenUser;
+  @Column(name = "matKhau")
+  private String matKhau;
 
-    @Column(name = "gioiTinh")
-    private String gioiTinh;
+  @Column(name = "tenUser")
+  private String tenUser;
 
-    @Column(name = "ngaySinh")
-    private Date ngaySinh;
+  @Column(name = "gioiTinh")
+  private String gioiTinh;
 
-    @Column(name = "maCCCD")
-    private String maCCCD;
+  @Column(name = "ngaySinh")
+  private Date ngaySinh;
 
-    @Column(name = "hoKhau")
-    private String hoKhau;
+  @Column(name = "maCCCD")
+  private String maCCCD;
 
-    @Column(name = "SoDienThoai")
-    private String SoDienThoai;
+  @Column(name = "hoKhau")
+  private String hoKhau;
 
-    @Column(name = "diaChi")
-    private String diaChi;
+  @Column(name = "SoDienThoai")
+  private String SoDienThoai;
 
-    @Column(name = "ghiChu")
-    private String ghiChu;
+  @Column(name = "diaChi")
+  private String diaChi;
 
-    @Column(name = "ngayTao")
-    private Date ngayTao;
+  @Column(name = "ghiChu")
+  private String ghiChu;
 
-    @Column(name = "ngaySua")
-    private Date ngaySua;
+  @Column(name = "ngayTao")
+  private Date ngayTao;
 
-    @Column(name = "trangThai")
-    private int trangThai;
+  @Column(name = "ngaySua")
+  private Date ngaySua;
 
-    @Column(name = "role")
-    private String role;
+  @Column(name = "trangThai")
+  private int trangThai;
 
-
+  @Column(name = "role")
+  private String role;
 }
