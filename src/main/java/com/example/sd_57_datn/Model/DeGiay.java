@@ -1,5 +1,6 @@
 package com.example.sd_57_datn.Model;
 
+<<<<<<< Updated upstream
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +17,23 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DeGiay {
+=======
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.UUID;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Getter
+@Setter
+@Entity
+@Table(name = "DeGiay")
+public class DeGiay {
+
+>>>>>>> Stashed changes
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "Id_DeGiay")
@@ -28,6 +46,7 @@ public class DeGiay {
     private String ghiChu;
 
     @Column(name = "ngayTao")
+<<<<<<< Updated upstream
     private Date ngayTao;
 
     @Column(name = "ngaySua")
@@ -35,4 +54,14 @@ public class DeGiay {
 
     @Column(name = "trangThai")
     private int trangThai;
+=======
+    private String ngayTao;
+
+    @Column(name = "ngaySua")
+    private String ngaySua;
+
+    @Column(name = "trangThai")
+    private int trangThai;
+
+>>>>>>> Stashed changes
 }

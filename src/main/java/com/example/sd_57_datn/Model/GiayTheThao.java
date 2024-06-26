@@ -3,10 +3,14 @@ package com.example.sd_57_datn.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+<<<<<<< Updated upstream
 
 import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.List;
+=======
+import java.math.BigDecimal;
+>>>>>>> Stashed changes
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -17,6 +21,10 @@ import java.util.UUID;
 @Entity
 @Table(name = "GiayTheThao")
 public class GiayTheThao {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "Id_GiayTheThao")
@@ -60,7 +68,11 @@ public class GiayTheThao {
 
     @ManyToOne
     @JoinColumn(name = "Id_ThuongHieu")
+<<<<<<< Updated upstream
     private ThuongHieu thuonghieu;
+=======
+    private ThuongHieu thuongHieu;
+>>>>>>> Stashed changes
 
     @ManyToOne
     @JoinColumn(name = "Id_DinhTanGiay")
@@ -94,17 +106,38 @@ public class GiayTheThao {
     @Column(name = "trangThai")
     private int trangThai;
 
+<<<<<<< Updated upstream
     @Column(name = "SoTienGiamGia")
     private BigDecimal soTienDaGiam;
 
+=======
+
+    @Column(name = "SoTienGiamGia")
+    private BigDecimal soTienDaGiam;
+
+    //Todo join list Image
+>>>>>>> Stashed changes
     @JsonIgnore
     @OneToMany(mappedBy = "giayTheThao", fetch = FetchType.EAGER)
     List<Image> image;
 
+<<<<<<< Updated upstream
     public String getAnhDau(){
         if (image != null && !image.isEmpty()){
             return  image.get(0).getLink();
         }
         return "Đường dẫn ảnh mặc định khi không có ảnh"; //thay ảnh bằng thông báo khi không có ảnh
     }
+=======
+
+    public String getAnhDau() {
+        if (image != null && !image.isEmpty()) {
+            return image.get(0).getLink();
+        }
+        // Thay bằng đường dẫn ảnh mặc định hoặc thông báo khác khi không có ảnh
+        return "Đường dẫn ảnh mặc định khi không có ảnh";
+    }
+
+
+>>>>>>> Stashed changes
 }
